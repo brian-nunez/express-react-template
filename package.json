@@ -1,0 +1,41 @@
+{
+  "name": "express-setup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "confit": "^3.0.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "debug": "^4.1.1",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.1",
+    "helmet": "^3.22.0",
+    "node-fetch": "^2.6.0",
+    "shortstop-handlers": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "babel-polyfill": "^6.26.0",
+    "eslint": "^7.0.0",
+    "eslint-config-amex": "^12.0.2",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "clean": "rm -rf build",
+    "build": "babel src -d build",
+    "prestart:dev": "npm run clean && npm run build",
+    "start:dev": "cross-env DEBUG=express-setup:server ENV=e0 node ./build/bin/development.js",
+    "start": "cross-env node ./build/bin/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Nunez",
+  "license": "MIT"
+}
